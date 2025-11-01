@@ -1,0 +1,38 @@
+version: 2
+
+project_name: rabbit-go
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    binary: rabbit-go
+    main: ./main.go
+
+archives:
+  - format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+brews:
+  - name: rabbit
+    repository:
+      owner: ilpanda
+      name: homebrew-rabbit-go
+      token: "{{ .Env.GITHUB_TOKEN }}"
+    homepage: "https://github.com/rabbit-go/rabbit-go"
+    description: "Android ADB command line tool"
+    license: "MIT"
+    install: |
+      bin.install "rabbit-go"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
