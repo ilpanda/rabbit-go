@@ -21,7 +21,7 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "rabbit",
+	Use:   "rabbit-go",
 	Short: "Android ADB command line tool",
 	Long:  "A CLI tool for Android ADB operations",
 }

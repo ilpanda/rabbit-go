@@ -15,16 +15,18 @@ builds:
     main: ./main.go
 
 archives:
-  - format: tar.gz
+  - formats:                    # 改用 formats (复数)
+      - tar.gz
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
 brews:
   - name: rabbit
     repository:
       owner: ilpanda
-      name: homebrew-rabbit-go
+      name: homebrew-repo
       token: "{{ .Env.GITHUB_TOKEN }}"
-    homepage: "https://github.com/rabbit-go/rabbit-go"
+    directory: Formula           # 使用现有的 Formula 目录
+    homepage: "https://github.com/ilpanda/rabbit-go"
     description: "Android ADB command line tool"
     license: "MIT"
     install: |
