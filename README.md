@@ -30,17 +30,17 @@ Mac 系统使用 brew 安装 rabbit：
 
 ```shell
 $ go build -o rabbit-go
-$ brew install ilpanda/repo/rabbit
+$ brew install ilpanda/repo/rabbit-go
 ```
 
-打开一个新的终端，在命令行执行 `rabbit --help` 查看帮助信息：
+打开一个新的终端，在命令行执行 `rabbit-go --help` 查看帮助信息：
 
 ```shell
-$ rabbit --help
+$ rabbit-go --help
 A CLI tool for Android ADB operations
 
 Usage:
-  rabbit [flags]
+  rabbit-go [flags]
 
 Flags:
       --action string    android adb start system activity (locale|developer|application|notification|bluetooth|input|display)

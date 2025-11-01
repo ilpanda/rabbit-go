@@ -20,7 +20,7 @@ archives:
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
 brews:
-  - name: rabbit
+  - name: rabbit-go
     repository:
       owner: ilpanda
       name: homebrew-repo
